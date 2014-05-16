@@ -8,7 +8,8 @@ class lexiconFrontendEntryUpdateFromGridProcessor extends modProcessor {
     public $entry;
 
     public function process() {
-        $property = array(
+        $modx->lexicon->load('lexiconfrontend:mgr');
+		$property = array(
             'data' => $this->getProperty('data')
         );
         $response = $this->modx->runProcessor('workspace/lexicon/updatefromgrid', $property);
